@@ -25,13 +25,13 @@ function playRound(humanChoice, computerChoice) {
     for (let i = 0; i < beaters.length; i++) {
         if (humanChoice == beaters[i][0] && computerChoice == beaters[i][1])
         {
-            // If pair is found and computerChoice is beaters[i][1], humanChoice wins
+            // If pair is found and computerChoice is beaters[i][1], human wins
             console.log("You win! " + beaters[i][0] + " beats " + beaters[i][1]);
             winnerFound = true;
             return "human"
         }
         else if (computerChoice == beaters[i][0] && humanChoice == beaters[i][1]) {
-            // Human wins
+            // Computer wins
             console.log("You lose! " + beaters[i][0] + " beats " + beaters[i][1]);
             winnerFound = true;
             return "computer"
