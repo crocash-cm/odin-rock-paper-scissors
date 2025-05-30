@@ -21,7 +21,7 @@ function playRound(humanChoice, computerChoice) {
     let winnerFound = false;
     // First item of nested arrays beats second item
     let beaters = [["paper", "rock"], ["rock", "scissors"], ["scissors", "paper"]];
-    // Iterate over beaters
+
     for (let i = 0; i < beaters.length; i++) {
         if (humanChoice == beaters[i][0] && computerChoice == beaters[i][1])
         {
