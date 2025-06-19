@@ -66,13 +66,13 @@ function removeResult () {
     }
 }
 
-function resetGame () {
-    removeResult();
-    humanScore = 0;
-    computerScore = 0;
-    roundsCount = 0;
-    scoreUpdater();
-}
+// function resetGame () {
+//     removeResult();
+//     humanScore = 0;
+//     computerScore = 0;
+//     roundsCount = 0;
+//     scoreUpdater();
+// }
 
 function checkResult () {
     const finalResult = document.querySelector("#final-result")
@@ -118,10 +118,6 @@ function runRound (humanChoice) {
     }
     scoreUpdater();
     checkResult();
-    if (roundsCount >= MAX_ROUNDS)
-    {
-        resetGame();
-    }
 }
 
 const rockBtn = document.querySelector("#rock-btn");
