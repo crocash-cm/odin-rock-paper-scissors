@@ -60,15 +60,10 @@ function playRound(humanChoice, computerChoice) {
 
 function removeResult () {
     const resultPara = document.querySelector("#result-para");
-    const finalResult = document.querySelector("#final-result")
     if (resultPara != null)
     {
         resultPara.textContent = "";
     }
-    if (finalResult != null)
-    {
-        finalResult.textContent = "";
-    }  
 }
 
 function resetGame () {
