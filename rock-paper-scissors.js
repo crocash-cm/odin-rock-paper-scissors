@@ -60,18 +60,23 @@ function playRound(humanChoice, computerChoice) {
 
 function removeResult () {
     const resultPara = document.querySelector("#result-para");
+    const finalResult = document.querySelector("#final-result")
     if (resultPara != null)
     {
         resultPara.textContent = "";
     }
-    
-    
+    if (finalResult != null)
+    {
+        finalResult.textContent = "";
+    }  
 }
 
 function resetGame () {
+    removeResult();
     humanScore = 0;
     computerScore = 0;
     roundsCount = 0;
+    scoreUpdater();
 }
 
 function checkResult () {
@@ -93,7 +98,6 @@ function checkResult () {
             //tie;
             finalResult.textContent = "Nobody wins! It was a tie!";
         }
-        resetGame();
     }
 
 }
@@ -101,15 +105,14 @@ function checkResult () {
 
 function scoreUpdater () {
     const scorePara = document.querySelector("#score-para");
-    scorePara.id = "score-para";
     scorePara.textContent = "Your Score: " + humanScore + " Computer Score: " + computerScore;
 }
 
-function runRound (attack) {
+function runRound (humanChoice) {
     roundsCount++;
     console.log("runRound->roundsCount: " + roundsCount)
     removeResult();
-    let roundResult = playRound(attack, getComputerChoice());
+    let roundResult = playRound(humanChoice, getComputerChoice());
     if (roundResult == "human")
     {
         humanScore++;
@@ -120,6 +123,10 @@ function runRound (attack) {
     }
     scoreUpdater();
     checkResult();
+    if (roundsCount >= MAX_ROUNDS)
+    {
+        resetGame();
+    }
 }
 
 const rockBtn = document.querySelector("#rock-btn");
